@@ -6,7 +6,8 @@ const topics = [
   { label: 'MUI Basics', path: '/topics/basics' },
   { label: 'Layout & Structure', path: '/topics/layout' },
   { label: 'Navigation', path: '/topics/navigation' },
-    { label: 'Forms', path: '/topics/forms' },
+  { label: 'Forms', path: '/topics/forms' },
+  { label: 'Data Display', path: '/topics/datadisplay' },
 
 
 ];

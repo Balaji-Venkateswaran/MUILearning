@@ -28,8 +28,6 @@ export default function LayoutPage() {
          MUI Layout & Structure Examples
       </Typography>
 
-      
-
       <Paper sx={{ p: 3, mb: 4 }}>
         <Typography variant="h5" color="secondary" gutterBottom>
           Grid System (rows, columns, breakpoints)

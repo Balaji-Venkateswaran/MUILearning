@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Box,
   Container,
@@ -24,24 +24,24 @@ import {
   ToggleButton,
   Paper,
   Divider,
-} from '@mui/material';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+} from "@mui/material";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import {
   LocalizationProvider,
   DatePicker,
   TimePicker,
   DateTimePicker,
-} from '@mui/x-date-pickers';
-import Link from 'next/link';
-import dayjs from 'dayjs';
+} from "@mui/x-date-pickers";
+import Link from "next/link";
+import dayjs from "dayjs";
 
 export default function FormInputsPage() {
-  const [selected, setSelected] = useState('');
-  const [radioValue, setRadioValue] = useState('option1');
+  const [selected, setSelected] = useState("");
+  const [radioValue, setRadioValue] = useState("option1");
   const [switchOn, setSwitchOn] = useState(true);
   const [sliderValue, setSliderValue] = useState(30);
   const [rating, setRating] = useState<number | null>(4);
-  const [toggle, setToggle] = useState('left');
+  const [toggle, setToggle] = useState("left");
   const [date, setDate] = useState(dayjs());
   const [time, setTime] = useState(dayjs());
   const [dateTime, setDateTime] = useState(dayjs());
@@ -51,16 +51,16 @@ export default function FormInputsPage() {
       <Typography
         variant="h4"
         align="center"
-        sx={{ color: 'primary.main', fontWeight: 700, mb: 4 }}
+        sx={{ color: "primary.main", fontWeight: 700, mb: 4 }}
       >
-    UI Form & Input Components
+        UI Form & Input Components
       </Typography>
 
       <Paper sx={{ p: 3, mb: 4 }}>
         <Typography variant="h5" color="secondary" gutterBottom>
           TextField & Select
         </Typography>
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
           <TextField label="Name" variant="outlined" fullWidth />
           <TextField label="Email" type="email" variant="filled" fullWidth />
           <FormControl fullWidth>
@@ -82,21 +82,37 @@ export default function FormInputsPage() {
         <Typography variant="h5" color="secondary" gutterBottom>
           Checkbox, Radio, Switch
         </Typography>
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 3 }}>
-          <FormControlLabel control={<Checkbox defaultChecked />} label="Accept Terms" />
+        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
+          <FormControlLabel
+            control={<Checkbox defaultChecked />}
+            label="Accept Terms"
+          />
 
           <RadioGroup
             row
             value={radioValue}
             onChange={(e) => setRadioValue(e.target.value)}
           >
-            <FormControlLabel value="option1" control={<Radio />} label="Option 1" />
-            <FormControlLabel value="option2" control={<Radio />} label="Option 2" />
+            <FormControlLabel
+              value="option1"
+              control={<Radio />}
+              label="Option 1"
+            />
+            <FormControlLabel
+              value="option2"
+              control={<Radio />}
+              label="Option 2"
+            />
           </RadioGroup>
 
           <FormControlLabel
-            control={<Switch checked={switchOn} onChange={(e) => setSwitchOn(e.target.checked)} />}
-            label={switchOn ? 'Enabled' : 'Disabled'}
+            control={
+              <Switch
+                checked={switchOn}
+                onChange={(e) => setSwitchOn(e.target.checked)}
+              />
+            }
+            label={switchOn ? "Enabled" : "Disabled"}
           />
         </Box>
       </Paper>
@@ -105,7 +121,7 @@ export default function FormInputsPage() {
         <Typography variant="h5" color="secondary" gutterBottom>
           Slider, Autocomplete, Rating
         </Typography>
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
           <Slider
             value={sliderValue}
             onChange={(_, v) => setSliderValue(v as number)}
@@ -116,8 +132,10 @@ export default function FormInputsPage() {
             valueLabelDisplay="auto"
           />
           <Autocomplete
-            options={['React', 'Next.js', 'MUI', 'TypeScript']}
-            renderInput={(params) => <TextField {...params} label="Favorite Framework" />}
+            options={["React", "Next.js", "MUI", "TypeScript"]}
+            renderInput={(params) => (
+              <TextField {...params} label="Favorite Framework" />
+            )}
           />
           <Rating value={rating} onChange={(_, newVal) => setRating(newVal)} />
         </Box>
@@ -128,7 +146,7 @@ export default function FormInputsPage() {
           Date & Time Pickers
         </Typography>
         <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 3 }}>
+          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
             <DatePicker
               label="Select Date"
               value={date}
@@ -152,7 +170,7 @@ export default function FormInputsPage() {
         <Typography variant="h5" color="secondary" gutterBottom>
           Buttons & ToggleButtons
         </Typography>
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mb: 3 }}>
+        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2, mb: 3 }}>
           <Button variant="contained" color="primary">
             Submit
           </Button>
@@ -184,14 +202,14 @@ export default function FormInputsPage() {
       </Paper>
       <Divider sx={{ my: 4 }} />
 
-      <Box sx={{ textAlign: 'center', mb: 4 }}>
+      <Box sx={{ textAlign: "center", mb: 4 }}>
         <Button
           component={Link}
           href="/"
           variant="contained"
           sx={{
-            bgcolor: 'primary.main',
-            '&:hover': { bgcolor: 'primary.dark' },
+            bgcolor: "primary.main",
+            "&:hover": { bgcolor: "primary.dark" },
             px: 3,
             borderRadius: 2,
           }}
@@ -199,7 +217,6 @@ export default function FormInputsPage() {
           Back to Home
         </Button>
       </Box>
-     
     </Container>
   );
 }
